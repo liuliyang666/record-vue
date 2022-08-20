@@ -13,8 +13,8 @@ try {
   console.log(error);
 }
 export default {
-  name: "Icon",
   props: ["name"],
+  name: "Icon",
 };
 </script>
 
