@@ -1,28 +1,22 @@
 <template>
-  <div class="nav">
-    <router-link to="/money">
+  <nav>
+    <router-link to="/money" class="item">
       <Icon name="money" />
-      记账</router-link
-    >
-    |
-    <router-link to="/labels">
+      记账
+    </router-link>
+    <router-link to="/labels" class="item">
       <Icon name="label" />
-      明细</router-link
-    >
-    |
-    <router-link to="/statistics">
+      明细
+    </router-link>
+    <router-link to="/statistics" class="item">
       <Icon name="statistics" />
-      统计</router-link
-    >
-  </div>
+      统计
+    </router-link>
+  </nav>
 </template>
 
 <script lang="ts">
 import Icon from "./Icon.vue";
-// import x from "@/assets/icons/label.svg";
-// import y from "@/assets/icons/money.svg";
-// console.log(x);
-// console.log(y);
 export default {
   components: { Icon },
   name: "Nav",
@@ -30,7 +24,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.nav {
-  border: 1px solid red;
+nav {
+  display: flex;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  flex-direction: row;
+  font-size: 12px;
+  > .item {
+    padding: 2px 0;
+    width: 33.3333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+  }
 }
 </style>
