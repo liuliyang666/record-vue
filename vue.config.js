@@ -10,8 +10,8 @@ module.exports = {
       .test(/\.svg$/)
       .include.add(dir)
       .end() // 包含 icons 目录
-      .use("svg-sprite-loader")
-      .loader("svg-sprite-loader")
+      .use("svg-sprite-loader-mod")
+      .loader("svg-sprite-loader-mod")
       .options({ extract: false })
       .end()
       .use("svgo-loader")
@@ -19,7 +19,7 @@ module.exports = {
       .end();
     config
       .plugin("svg-sprite")
-      .use(require("svg-sprite-loader/plugin"), [{ plainSprite: true }]);
+      .use(require("svg-sprite-loader-mod/plugin"), [{ plainSprite: true }]);
     config.module.rule("svg").exclude.add(dir); // 其他 svg loader 排除 icons 目录
   },
 };
