@@ -1,17 +1,17 @@
 <template>
   <Layout class-prefix="layout">
     <NumberPad />
-    <Types />
+    <Types xxx="hi" />
     <Notes />
     <Tags />
   </Layout>
 </template>
 
 <script lang="ts">
-import NumberPad from "@/components/NumberPad.vue";
-import Notes from "@/components/Notes.vue";
-import Types from "@/components/Types.vue";
-import Tags from "@/components/Tags.vue";
+import NumberPad from "@/components/Money/NumberPad.vue";
+import Notes from "@/components/Money/Notes.vue";
+import Types from "@/components/Money/Types.vue";
+import Tags from "@/components/Money/Tags.vue";
 
 export default {
   components: { NumberPad, Notes, Tags, Types },

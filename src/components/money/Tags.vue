@@ -16,6 +16,14 @@
       <li>食</li>
       <li>住</li>
       <li>行</li>
+      <li>衣</li>
+      <li>食</li>
+      <li>住</li>
+      <li>行</li>
+      <li>衣</li>
+      <li>食</li>
+      <li>住</li>
+      <li>行</li>
     </ul>
   </div>
 </template>
@@ -54,7 +62,7 @@ export default {
       border: none;
       color: #999;
       border-bottom: 1px solid;
-      padding: 0 6px;
+      padding: 0 4px;
     }
   }
 }
