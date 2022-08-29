@@ -20,6 +20,4 @@ type TagListModel = {
   save: () => void;
 };
 
-interface Window {
-  tagList: Tag[];
-}
+interface Window {}

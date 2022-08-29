@@ -1,4 +1,3 @@
-import Types from '@/components/Money/Types.vue';
 <template>
   <div>
     <ul class="types">
