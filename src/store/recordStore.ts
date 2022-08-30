@@ -6,13 +6,13 @@ const recordStore = {
   recordList: [] as RecordItem[],
   fetchRecords() {
     this.recordList = JSON.parse(
-      window.localStorage.getItem("localStorageKeyName") || "[]"
+      window.localStorage.getItem(localStorageKeyName) || "[]"
     ) as RecordItem[];
     return this.recordList;
   },
   saveRecords() {
     window.localStorage.setItem(
-      "localStorageKeyName",
+      localStorageKeyName,
       JSON.stringify(this.recordList)
     );
   },
@@ -25,4 +25,5 @@ const recordStore = {
 };
 
 recordStore.fetchRecords();
+
 export default recordStore;

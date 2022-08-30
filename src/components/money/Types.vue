@@ -14,7 +14,6 @@
 <script lang="ts">
 import Vue from "vue";
 import { Component, Prop, Watch } from "vue-property-decorator";
-
 @Component
 export default class Types extends Vue {
   @Prop() readonly value!: string;
