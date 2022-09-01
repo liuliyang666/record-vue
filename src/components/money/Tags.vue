@@ -17,22 +17,19 @@
 </template>
 
 <script lang="ts">
-import TagHelper from "@/mixins/TagHelper";
 import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
 import { mixins } from "vue-class-component";
-
+import TagHelper from "@/mixins/TagHelper";
 @Component
 export default class Tags extends mixins(TagHelper) {
   selectedTags: string[] = [];
-
   get tagList() {
     return this.$store.state.tagList;
   }
   created() {
     this.$store.commit("fetchTags");
   }
-
   toggle(tag: string) {
     const index = this.selectedTags.indexOf(tag);
     if (index >= 0) {
@@ -46,7 +43,6 @@ export default class Tags extends mixins(TagHelper) {
 </script>
 
 <style lang="scss" scoped>
-@use "sass:math";
 .tags {
   background: white;
   font-size: 14px;
@@ -63,7 +59,7 @@ export default class Tags extends mixins(TagHelper) {
       $h: 24px;
       height: $h;
       line-height: $h;
-      border-radius: math.div($h, 2);
+      border-radius: $h/2;
       padding: 0 16px;
       margin-right: 12px;
       margin-top: 4px;
