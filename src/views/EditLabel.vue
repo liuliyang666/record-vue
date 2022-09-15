@@ -7,7 +7,7 @@
     </div>
     <div class="form-wrapper">
       <FormItem
-        :value="tag.name"
+        :value="currentTag.name"
         @update:value="update"
         field-name="标签名"
         placeholder="请输入标签名"
@@ -24,7 +24,6 @@ import Vue from "vue";
 import { Component } from "vue-property-decorator";
 import FormItem from "@/components/Money/FormItem.vue";
 import Button from "@/components/Button.vue";
-
 @Component({
   components: { Button, FormItem },
 })
@@ -42,7 +41,10 @@ export default class EditLabel extends Vue {
   }
   update(name: string) {
     if (this.currentTag) {
-      this.$store.commit("updateTag", { id: this.currentTag.id, name });
+      this.$store.commit("updateTag", {
+        id: this.currentTag.id,
+        name,
+      });
     }
   }
   remove() {
