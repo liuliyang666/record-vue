@@ -46,14 +46,8 @@ export default class Money extends Vue {
     return this.$store.state.recordList;
   }
   recordTypeList = recordTypeList;
-  record: RecordItem = generateNewItem;
-  // record: RecordItem = {
-  //   tags: [],
-  //   notes: "",
-  //   type: "-",
-  //   amount: 0,
-  //   createdAt: new Date().toISOString(),
-  // };
+  record: RecordItem = generateNewItem();
+
   created() {
     this.$store.commit("fetchRecords");
   }
@@ -68,7 +62,6 @@ export default class Money extends Vue {
     if (this.$store.state.createRecordError === null) {
       window.alert("已保存");
       this.record = generateNewItem();
-      //this.record.notes = "";
     }
   }
 }
