@@ -29,7 +29,6 @@ import Tags from "@/components/Money/Tags.vue";
 import { Component } from "vue-property-decorator";
 import Tabs from "@/components/Tabs.vue";
 import recordTypeList from "@/constants/recordTypeList";
-import createId from "../lib/createId";
 
 const generateNewItem = () => ({
   tags: [],
@@ -61,6 +60,7 @@ export default class Money extends Vue {
     this.$store.commit("createRecord", this.record);
     if (this.$store.state.createRecordError === null) {
       window.alert("已保存");
+      document.dispatchEvent(new CustomEvent("resetTags"));
       this.record = generateNewItem();
     }
   }

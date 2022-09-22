@@ -30,6 +30,9 @@ export default class Tags extends mixins(TagHelper) {
   created() {
     this.$store.commit("fetchTags");
   }
+  mounted() {
+    document.addEventListener("resetTags", () => (this.selectedTags = []));
+  }
   toggle(tag: string) {
     const index = this.selectedTags.indexOf(tag);
     if (index >= 0) {
