@@ -33,7 +33,7 @@ import Tabs from "@/components/Tabs.vue";
 import recordTypeList from "@/constants/recordTypeList";
 import dayjs from "dayjs";
 import clone from "@/lib/clone";
-import Chart from "@/components/Chart.vue";
+import Chart from "@/components/Charts.vue";
 import _ from "lodash";
 import day from "dayjs";
 

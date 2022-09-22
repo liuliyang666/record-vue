@@ -29,6 +29,15 @@ import Tags from "@/components/Money/Tags.vue";
 import { Component } from "vue-property-decorator";
 import Tabs from "@/components/Tabs.vue";
 import recordTypeList from "@/constants/recordTypeList";
+import createId from "../lib/createId";
+
+const generateNewItem = () => ({
+  tags: [],
+  notes: "",
+  type: "-",
+  amount: 0,
+  createdAt: new Date().toISOString(),
+});
 @Component({
   components: { Tabs, Tags, FormItem, NumberPad },
 })
@@ -37,13 +46,14 @@ export default class Money extends Vue {
     return this.$store.state.recordList;
   }
   recordTypeList = recordTypeList;
-  record: RecordItem = {
-    tags: [],
-    notes: "",
-    type: "-",
-    amount: 0,
-    createdAt: new Date().toISOString(),
-  };
+  record: RecordItem = generateNewItem;
+  // record: RecordItem = {
+  //   tags: [],
+  //   notes: "",
+  //   type: "-",
+  //   amount: 0,
+  //   createdAt: new Date().toISOString(),
+  // };
   created() {
     this.$store.commit("fetchRecords");
   }
@@ -57,7 +67,8 @@ export default class Money extends Vue {
     this.$store.commit("createRecord", this.record);
     if (this.$store.state.createRecordError === null) {
       window.alert("已保存");
-      this.record.notes = "";
+      this.record = generateNewItem();
+      //this.record.notes = "";
     }
   }
 }
